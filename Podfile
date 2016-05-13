@@ -1,6 +1,7 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
 # Uncomment this line to define a global platform for your project
+link_with  [‘Template’, 'TemplateTests']
 platform :ios, '8.0'
 
 # Uncomment this line if you're using Swift
