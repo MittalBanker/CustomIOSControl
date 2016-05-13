@@ -15,5 +15,4 @@
 @property (nonatomic)BOOL isAddress;
 -(void)textChanged:(NSNotification*)notification;
 @property (nonatomic, retain) UILabel *placeHolderLabel;
--(void)refreshUI;
 @end

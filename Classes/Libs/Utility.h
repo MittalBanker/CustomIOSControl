@@ -6,6 +6,7 @@
 //  Copyright © 2016 Kevin B. Adesara. All rights reserved.
 //
 
+#
 @interface Utility : NSObject <MBProgressHUDDelegate>
 
 @property (nonatomic, strong) Reachability *internetReachability;
@@ -82,4 +83,7 @@
  @return return UTC date in string format
  */
 -(NSString*)convertToUTCTime:(NSString*)strDate;
+- (void)proximityChanged:(NSNotification *)notification;
+- (void)volumeChanged:(NSNotification *)notification;
+-(void)reachabilityChanged:(NSNotification *)note ;
 @end
