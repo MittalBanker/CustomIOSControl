@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "CustomIOSControl"
-  s.version      = "0.0.1"
+  s.version      = “0.0.2”
   s.summary      = "Custom IOS Controls which can be customized in Interface builder"
 
   # This description is used to generate tags and improve search results.
@@ -62,11 +62,10 @@ Pod::Spec.new do |s|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  s.platform     = :ios
   s.platform     = :ios, "8.0"
-
+  s.osx.platform = :osx, "10.11"
   #  When using multiple platforms
-  # s.ios.deployment_target = "8.0"
+ # s.ios.deployment_target = "8.0"
   # s.osx.deployment_target = "10.7"
   # s.watchos.deployment_target = "2.0"
   # s.tvos.deployment_target = "9.0"
@@ -78,7 +77,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/miralmegha/CustomIOSControl.git", :commit => "c2317d8902247f21e3bca007089b83f5a955e8bd" }
+  s.source       = { :git => "https://github.com/miralmegha/CustomIOSControl.git", :commit => "c2317d8902247f21e3bca007089b83f5a955e8bd"}
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

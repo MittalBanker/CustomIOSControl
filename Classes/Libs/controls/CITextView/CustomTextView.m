@@ -49,42 +49,49 @@ int characterCount;
     {
         [self setPlaceholder:self.placeholder];
         [self setPlaceholderColor: [UIColor colorWithRed:244.00 green:244.00 blue:245.0 alpha:1.0] ];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textChanged:) name:UITextViewTextDidChangeNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textChanged:) name:UITextViewTextDidChangeNotification object:self];
     }
     return self;
 }
 
-- (void)textChanged:(UITextView *)textView
+- (void)textChanged:(NSNotification *) notification
 {
-    characterCount = self.maxLength - (int)[[textView text] length];
-    [self.characterCountLabel setText:[NSString stringWithFormat:@"%d", characterCount]];
+    if ([notification.object isKindOfClass:[CustomTextView class]])
+    {
+        CustomTextView *textView = [notification object];
+        int len = textView.text.length;
+        characterCount =  len;
+        self.characterCountLabel.text =[NSString stringWithFormat:@"%d",len];
+        //[self.characterCountLabel setText:[NSString stringWithFormat:@"%d", characterCount]];
+        
+        
+        if([[self placeholder] length] == 0)
+        {
+            return;
+        }
+        if([[self text] length] == 0)
+        {
+            [[self viewWithTag:999] setAlpha:1];
+        }
+        else
+        {
+            [[self viewWithTag:999] setAlpha:0];
+        }
+        // Check if the count is over the limit
+        if(characterCount < 0) {
+            // Change the color
+            [self.characterCountLabel setTextColor:[UIColor redColor]];
+        }
+        else if(characterCount < 20) {
+            // Change the color to yellow
+            [self.characterCountLabel setTextColor:[UIColor orangeColor]];
+        }
+        else {
+            // Set normal color
+            [self.characterCountLabel setTextColor:[UIColor blackColor]];
+        }
+    }
     
-    
-    if([[self placeholder] length] == 0)
-    {
-        return;
-    }
-    if([[self text] length] == 0)
-    {
-        [[self viewWithTag:999] setAlpha:1];
-    }
-    else
-    {
-        [[self viewWithTag:999] setAlpha:0];
-    }
-    // Check if the count is over the limit
-    if(characterCount < 0) {
-        // Change the color
-        [self.characterCountLabel setTextColor:[UIColor redColor]];
-    }
-    else if(characterCount < 20) {
-        // Change the color to yellow
-        [self.characterCountLabel setTextColor:[UIColor orangeColor]];
-    }
-    else {
-        // Set normal color
-        [self.characterCountLabel setTextColor:[UIColor blackColor]];
-    }
 }
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
@@ -105,6 +112,11 @@ int characterCount;
 }
 - (void)drawRect:(CGRect)rect
 {
+    self.layer.cornerRadius = _cornerRadius;
+    [[self layer]setBorderWidth:_borderWidth];
+    [[self layer] setBorderColor:_borderColor.CGColor];
+    [self.layer setMasksToBounds:YES];
+    
     if( [[self placeholder] length] > 0 )
     {
         if (_placeHolderLabel == nil )
@@ -114,7 +126,7 @@ int characterCount;
             _placeHolderLabel.numberOfLines = 0;
             _placeHolderLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:13];
             _placeHolderLabel.backgroundColor = [UIColor clearColor];
-            _placeHolderLabel.textColor = [UIColor colorWithRed:207.00/255.00 green:207.00/255.00 blue:212.00/255.00 alpha:1.0];
+            _placeHolderLabel.textColor = _placeholderColor; //[UIColor colorWithRed:207.00/255.00 green:207.00/255.00 blue:212.00/255.00 alpha:1.0];
             _placeHolderLabel.alpha = 0;
             _placeHolderLabel.tag = 999;
             
@@ -126,7 +138,7 @@ int characterCount;
             if (_characterCountLabel == nil ){
                 self.characterCountLabel = [[UILabel alloc] init];
                 self.characterCountLabel.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin;
-                self.characterCountLabel.frame = CGRectMake(self.frame.size.width-70, 0, 63, 20);
+                self.characterCountLabel.frame = CGRectMake(self.frame.size.width-70, self.frame.size.height-20, 63, 20);
                 [self.characterCountLabel setTextAlignment:NSTextAlignmentRight];
                 [self.characterCountLabel setFont:[UIFont boldSystemFontOfSize:13]];
                 [self.characterCountLabel setBackgroundColor:[UIColor clearColor]];

@@ -1,13 +1,13 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
 # Uncomment this line to define a global platform for your project
-link_with  [‘Template’, 'TemplateTests']
 platform :ios, '8.0'
 
 # Uncomment this line if you're using Swift
 # use_frameworks!
 
 # ===== common =====
+target "Template" do
 pod 'AFNetworking', '~> 2.5'      # networking lib
 pod 'SDWebImage', '~> 3.7'        # image loading lib
 pod 'MBProgressHUD', '~> 0.9.2'   # progress/toast mesage display lib
@@ -50,3 +50,4 @@ pod 'ObjectiveSugar', '~> 1.1'    # https://github.com/supermarin/ObjectiveSugar
 # pod 'BlocksKit', '~> 2.2'         # Blocks utility https://github.com/zwaldowski/BlocksKit
 # pod 'NSDate-Escort', '~> 1.7'     # Date utility https://github.com/azu/NSDate-Escort
 # ===== END social =====
+end
