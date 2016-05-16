@@ -132,5 +132,11 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
+
+s.dependency 'AFNetworking', '~> 2.5'   
+s.dependency 'SDWebImage', '~> 3.7'        
+s.dependency 'MBProgressHUD', '~> 0.9.2'   
+s.dependency 'TWMessageBarManager'     
+s.dependency  'ObjectiveSugar', '~> 1.1'  
   s.prefix_header_file = "Classes/Template-Prefix.pch"
 end
