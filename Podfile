@@ -10,7 +10,7 @@ platform :ios, '8.0'
 target "Template" do
 pod 'AFNetworking', '~> 2.5'      # networking lib
 pod 'SDWebImage', '~> 3.7'        # image loading lib
-pod 'MBProgressHUD', '~> 0.9.2'   # progress/toast mesage display lib
+pod 'MBProgressHUD', '~> 0.8’   # progress/toast mesage display lib
 pod 'TWMessageBarManager'         # app messages like 'success', 'failure', 'info'. https://github.com/terryworona/TWMessageBarManager
 # pod 'Appirater', '~> 2.0'         # rate the app https://github.com/arashpayan/appirater
 # ===== END common =====
@@ -50,4 +50,11 @@ pod 'ObjectiveSugar', '~> 1.1'    # https://github.com/supermarin/ObjectiveSugar
 # pod 'BlocksKit', '~> 2.2'         # Blocks utility https://github.com/zwaldowski/BlocksKit
 # pod 'NSDate-Escort', '~> 1.7'     # Date utility https://github.com/azu/NSDate-Escort
 # ===== END social =====
+end
+
+
+post_install do |installer|
+  installer.pods_project.build_configuration_list.build_configurations.each do |configuration|
+    configuration.build_settings['CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES'] = 'YES'
+  end
 end
