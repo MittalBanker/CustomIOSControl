@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5CEB57271CAE7D150072E30D /* Constants.h in Resources */ = {isa = PBXBuildFile; fileRef = E24AD0C91CAE58FD00B4BAEF /* Constants.h */; };
+		8B2461851CEB2618005A4803 /* Api.h in Headers */ = {isa = PBXBuildFile; fileRef = E24AD0CC1CAE58FD00B4BAEF /* Api.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8B57B09F1CEA04BF00471AE7 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B57B09E1CEA04BF00471AE7 /* Utility.m */; };
 		8B57B0B01CEA04CF00471AE7 /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B57B0A31CEA04CF00471AE7 /* CustomButton.m */; };
 		8B57B0B11CEA04CF00471AE7 /* CheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B57B0A61CEA04CF00471AE7 /* CheckBox.m */; };
@@ -259,6 +260,17 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		8B2461841CEB2601005A4803 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B2461851CEB2618005A4803 /* Api.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		E2A60E311CAE395B00BE0DEB /* Template */ = {
 			isa = PBXNativeTarget;
@@ -270,6 +282,7 @@
 				E2A60E301CAE395B00BE0DEB /* Resources */,
 				56FB83067D228930E47B59B2 /* 📦 Embed Pods Frameworks */,
 				3F5EBF6CFF730B761A1571A9 /* 📦 Copy Pods Resources */,
+				8B2461841CEB2601005A4803 /* Headers */,
 			);
 			buildRules = (
 			);
