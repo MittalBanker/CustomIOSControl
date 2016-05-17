@@ -8,7 +8,7 @@
 
 
 
-@interface Utility : NSObject 
+@interface Utility : NSObject <MBProgressHUDDelegate>
 
 @property (nonatomic, strong) Reachability *internetReachability;
 @property (nonatomic, strong) Reachability *hostReachability;

@@ -77,7 +77,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/miralmegha/CustomIOSControl.git", :commit => "c2317d8902247f21e3bca007089b83f5a955e8bd"}
+  s.source       = { :git => "https://github.com/miralmegha/CustomIOSControl.git", :commit => "0e58ab86832b235ad5c8008c5553ef0a34e36cc1"}
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
