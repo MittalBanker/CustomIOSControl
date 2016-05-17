@@ -5,7 +5,6 @@
 //
 
 #import "Api.h"
-#import <ObjectiveSugar/ObjectiveSugar.h>
 
 NSString *const ApiBaseUrl = @"api_baseurl";
 NSString *const ApiAFHttpRequestOperationManager = @"api_afhttprequestoperationmanager";

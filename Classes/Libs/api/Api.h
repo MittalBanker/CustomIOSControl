@@ -5,7 +5,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AFNetworking.h"
 
 // Configuration keys
 extern NSString *const ApiBaseUrl;                          // REQUIRED: base api url (e.g., http://localhost:3000/api )

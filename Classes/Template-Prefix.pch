@@ -15,9 +15,10 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
-@class MBProgressHUD;
-#import <MBProgressHUD/MBProgressHUD.h>
+#import <ObjectiveSugar/ObjectiveSugar.h>
+#import <MBProgressHUD.h>
 #import "Reachability.h"
+#import "AFNetworking.h"
 
 #import "Constants.h"
 #import "Utility.h"

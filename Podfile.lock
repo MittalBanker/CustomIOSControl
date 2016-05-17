@@ -33,7 +33,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 2.5)
   - FMDB
-  - MBProgressHUD (~> 0.9.2)
+  - MBProgressHUD (~> 0.8)
   - ObjectiveSugar (~> 1.1)
   - SDWebImage (~> 3.7)
   - TWMessageBarManager
@@ -46,6 +46,6 @@ SPEC CHECKSUMS:
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
   TWMessageBarManager: fd84e7948ba7968a2b5d9454859135761214ec56
 
-PODFILE CHECKSUM: dfd045b597f60761ee1c4dbc8d5af35d27e46e19
+PODFILE CHECKSUM: 5a80ea25541a5d8b10f988e2e141d3d519bae381
 
 COCOAPODS: 1.0.0
