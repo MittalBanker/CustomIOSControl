@@ -77,7 +77,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/miralmegha/CustomIOSControl.git", :commit => "0e58ab86832b235ad5c8008c5553ef0a34e36cc1"}
+  s.source       = { :git => "https://github.com/miralmegha/CustomIOSControl.git", :commit => "e4dd104d746c3ddc079e0a250889771d3cf818b2"}
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -131,7 +131,7 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
- s.subspec ‘Libs/controls/api’ do |ss|
+ s.subspec 'Libs/controls/api' do |ss|
     ss.source_files = 'AFNetworking/Api.{h,m}'
     ss.public_header_files = 'AFNetworking/Api.h'   
   end
