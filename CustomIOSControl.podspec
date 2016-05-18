@@ -77,7 +77,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/miralmegha/CustomIOSControl.git", :commit => "e4dd104d746c3ddc079e0a250889771d3cf818b2"}
+  s.source       = { :git => "https://github.com/miralmegha/CustomIOSControl.git", :commit => "bfbc5e23a18b71cfcb78a2f56bdea71fd12ec618"}
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -131,10 +131,6 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
- s.subspec 'Libs/controls/api' do |ss|
-    ss.source_files = 'AFNetworking/Api.{h,m}'
-    ss.public_header_files = 'AFNetworking/Api.h'   
-  end
 
 s.dependency 'AFNetworking', '~> 2.5'   
 s.dependency 'SDWebImage', '~> 3.7'        
@@ -142,4 +138,11 @@ s.dependency 'MBProgressHUD', '~> 0.9.2'
 s.dependency 'TWMessageBarManager'     
 s.dependency  'ObjectiveSugar', '~> 1.1'  
   s.prefix_header_file = "Classes/Template-Prefix.pch"
+def copy_header_mappings
+  mappings = {}
+  prefix = Pathname.new('Code')
+  all_headers.each do |header|
+    mappings[header] = header.relative_path_from(prefix)
+  end
+end
 end

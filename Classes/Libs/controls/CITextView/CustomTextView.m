@@ -59,7 +59,7 @@ int characterCount;
     if ([notification.object isKindOfClass:[CustomTextView class]])
     {
         CustomTextView *textView = [notification object];
-        int len = textView.text.length;
+        int len = (int)textView.text.length;
         characterCount =  len;
         self.characterCountLabel.text =[NSString stringWithFormat:@"%d",len];
         //[self.characterCountLabel setText:[NSString stringWithFormat:@"%d", characterCount]];
