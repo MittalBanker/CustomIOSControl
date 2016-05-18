@@ -131,6 +131,10 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
+ s.subspec ‘Libs/controls/api’ do |ss|
+    ss.source_files = 'AFNetworking/Api.{h,m}'
+    ss.public_header_files = 'AFNetworking/Api.h'   
+  end
 
 s.dependency 'AFNetworking', '~> 2.5'   
 s.dependency 'SDWebImage', '~> 3.7'        
