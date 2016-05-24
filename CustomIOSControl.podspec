@@ -77,7 +77,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/miralmegha/CustomIOSControl.git", :commit => "bfbc5e23a18b71cfcb78a2f56bdea71fd12ec618"}
+  s.source       = { :git => "https://github.com/miralmegha/CustomIOSControl.git", :commit => "721f07c215873a615e51d850e9ea8745d924dc61"}
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -88,7 +88,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "Classes", "Classes/**/*.{h,m}"
+  s.source_files  = "Classes/**/*.{h,m}"
   s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
@@ -131,6 +131,12 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
+s.subspec 'plat' do |ss|
+  s.source_files =
+    'Libs/controls/CIButton/CustomButton/*.{h,c,cxx}',
+  s.header_mappings_dir = 'Libs/controls/CIButton/CustomButton'
+  s.xcconfig = { 'ALWAYS_SEARCH_USER_PATHS' => 'NO' }
+end
 
 s.dependency 'AFNetworking', '~> 2.5'   
 s.dependency 'SDWebImage', '~> 3.7'        

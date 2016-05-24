@@ -15,7 +15,7 @@
 
 +(Utility *)sharedUtility;
 
-/**
+/** 
  to get Device Udid call
  @return Device UDID in string format
  */
