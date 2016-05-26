@@ -19,7 +19,7 @@ You don't have to make different control classes and download them from differen
 
 Ex:
 
-If you want to make one text field whom you can give maxLength, alphanumeric or not , border in Interface Builder then here it is. You can give this way:
+##If you want to make one text field whom you can give maxLength, alphanumeric or not , border in Interface Builder then here it is. You can give this way:
 
 ![alt tag](https://github.com/MittalBanker/CustomIOSControl/blob/master/Docs/Screen%20Shot%202016-05-16%20at%205.29.59%20PM.png)
 
